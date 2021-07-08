@@ -1,0 +1,78 @@
+<div class="container">
+    <h2>RegistrationForm</h2><hr>
+    <form #userform='ngForm'  (ngSubmit)='submitData(userform.value)'>
+        <div appMycolor class='form-group'>
+            <label>Name</label>
+            <input type='text' #nameRef='ngModel' class='form-control' name='uname' ngModel required minlength="5"
+            maxlength="9" pattern="[A-za-z]+" >
+        </div>
+        <div formGroupName="address">
+                <h2>Address</h2>
+                <div class='form-group'> 
+            <label for="street">Street: </label>
+            <input id="street" type='text' #streetRef='ngModel' class='form-control' name='ustreet' ngModel required  minlength="2"
+                maxlength="15" pattern="[a-z]+"
+                ></div> 
+
+
+                <div class='form-group'>
+            <label for="city">City: </label>
+            <input id="city" type='text' #cityRef='ngModel' class='form-control' name='ucity' ngModel required  minlength="1"
+                maxlength="15" pattern="[A-Za-z]+">
+                </div>
+
+
+                <div class='form-group'>
+            <label for="state">State: </label>
+            <input id="state" type='text' #stateRef='ngModel' class='form-control' name='ustate' ngModel required  minlength="2"
+                maxlength="15" pattern="[A-Za-z]+"></div>
+
+
+                <div class='form-group'>
+            <label for="zip">Zip Code: </label>
+            <input id="zip" type='text' #zipRef='ngModel' class='form-control' name='uzip' ngModel required  minlength="5"
+                maxlength="9" pattern="[0-9]+"></div>
+
+
+                </div>
+             
+       
+                <div *ngIf='nameRef.errors && (nameRef.touched || nameRef.dirty)' class='text text-danger'>
+
+                    <div [hidden]='!nameRef.errors.required'>Please enter name</div>
+                    <div [hidden]='!nameRef.errors.minlength'>Please enter Name Min length = 5</div>
+                    <div [hidden]='!nameRef.errors.pattern'>Invalid Name pattern</div>
+                  </div>
+
+                  <div *ngIf='streetRef.errors && (streetRef.touched || streetRef.dirty)' class='text text-danger'>
+
+                    <div [hidden]='!streetRef.errors.required'>Please enter Street</div>
+                   
+                  </div>
+
+                  <div *ngIf='cityRef.errors && (cityRef.touched || cityRef.dirty)' class='text text-danger'>
+
+                    <div [hidden]='!cityRef.errors.required'>Please enter city</div>
+                    <div [hidden]='!cityRef.errors.minlength'>Please enter Correct City</div>
+                    
+                  </div>
+
+                  <div *ngIf='stateRef.errors && (stateRef.touched || stateRef.dirty)' class='text text-danger'>
+
+                    <div [hidden]='!stateRef.errors.required'>Please enter State</div>
+                    <div [hidden]='!stateRef.errors.minlength'>Please enter Correct State</div>
+                    
+                  </div>
+
+          <div *ngIf='zipRef.errors && (zipRef.touched || zipRef.dirty)' class='text text-danger'>
+
+            <div [hidden]='!zipRef.errors.required'>Please enter Street</div>
+            <div [hidden]='!zipRef.errors.minlength'>Please enter Correct Zip Code</div>
+            <div [hidden]='!zipRef.errors.pattern'>Invalid Zip Code</div>
+          </div>
+
+
+        <button [disabled]='!userform.form.valid' type='submit' class='btn btn-success'>Submit</button>
+    </form>
+    <p>After Submitting, In Developer Console Output can be Viewed</p>
+</div>

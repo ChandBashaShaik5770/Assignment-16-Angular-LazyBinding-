@@ -1,0 +1,6 @@
+[
+    {"courseId" : 1,"courseName" : "Java", "courseDesc":"Java Basics","coursePrice":5000,"courseImg":"assets/images/java.jpg"},
+    {"courseId" : 2,"courseName" : "Adv Java", "courseDesc":"Advance Java","coursePrice":10000,"courseImg":"assets/images/adv java.jpg"},
+    {"courseId" : 3,"courseName" : "Angular", "courseDesc":"Angular","coursePrice":12000,"courseImg":"assets/images/angular.jpg"},
+    {"courseId" : 4,"courseName" : "Agnular JS", "courseDesc":"Angular JS","coursePrice":15000,"courseImg":"assets/images/angular js.jpg"}
+]
